@@ -1,9 +1,9 @@
 import socket as s 
 def client():
     host=s.gethostname()
-    port = 9000
+    port = 3000
     client_socket  = s.socket()
-    client_socket.bind((host,port))
+    client_socket.connect((host,port))
     message = input("Enter some message")
     while True:
         client_socket.send(message.encode())

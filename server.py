@@ -1,8 +1,7 @@
 import socket as  s
 def server():
     host = s.gethostname()
-    print(host)
-    port =9000
+    port =3000
     socketobj = s.socket()
     socketobj.bind((host,port))
     socketobj.listen(2)
@@ -16,6 +15,6 @@ def server():
 
         responce  = input("ENTER A DATA TO send")
         c.send(responce.encode())
-        c.close()
+    c.close()
 if __name__ == '__main__':
     server()
