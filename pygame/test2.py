@@ -46,6 +46,7 @@ class AbstractCar:
 
     def move_forward(self):
         self.vel = -4
+        print(self.x,self.y,self.vel)
         self.move()
 
     def move(self):
@@ -56,6 +57,7 @@ class AbstractCar:
         # Update the car's position
         self.y -= vertical
         self.x -= horizontal
+        print(self.y,self.x)
 
         # Ensure the car stays within the boundaries
         self.x = max(0, min(WIDTH - self.img.get_width(), self.x))
@@ -143,7 +145,7 @@ player_car = PlayerCar(4, 4)
 enemy_car = EnemyCar(4, 4)
 coins = [spawn_coin()]  # Start with one initial coin
 score = 0
-
+print('x')
 while run:
     clock.tick(FPS)
 
@@ -157,9 +159,8 @@ while run:
                 bullet_group.add(player_car.create_bullet())
             if event.key == pygame.K_RCTRL:
                 bullet_group.add(enemy_car.create_bullet())
-
+    
     keys = pygame.key.get_pressed()
-
     if keys[pygame.K_a]:
         player_car.rotate(left=True)
     if keys[pygame.K_d]:
