@@ -1,8 +1,8 @@
 import socket as  s
 def server():
-    host = s.gethostname()
+    host ='192.168.2.2' 
     port =3000
-    socketobj = s.socket()
+    socketobj = s.socket(s.AF_INET,s.SOCK_STREAM)
     socketobj.bind((host,port))
     socketobj.listen(2)
     c,address = socketobj.accept()
