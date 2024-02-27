@@ -1,6 +1,6 @@
 import socket as s 
 def client():
-    host=s.gethostname()
+    host='192.168.2.2'
     port = 9000
     client_socket  = s.socket()
     client_socket.bind((host,port))
