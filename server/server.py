@@ -13,7 +13,7 @@ def server():
             break 
         print(f"Recieved from client: {data}")
 
-        responce  = input("ENTER A DATA TO send")
+        responce  = input("ENTER A DATA TO send ")
         c.send(responce.encode())
     c.close()
 if __name__ == '__main__':
