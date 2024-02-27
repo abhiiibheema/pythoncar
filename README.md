@@ -1,2 +1,4 @@
 server ip = 192.168.2.2 192.168.2.7
 client ip = 192.168.2.10 
+export PYGAME_DETECT_AVX2=1
+set PYGAME_DETECT_AVX2=1
