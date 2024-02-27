@@ -56,7 +56,7 @@ class AbstractCar:
         # Update the car's position
         self.y -= vertical
         self.x -= horizontal
-
+        print(player_car.x,player_car.y)
         # Ensure the car stays within the boundaries
         self.x = max(0, min(WIDTH - self.img.get_width(), self.x))
         self.y = max(0, min(HEIGHT - self.img.get_height(), self.y))
