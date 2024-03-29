@@ -1,6 +1,6 @@
 import socket as  s
 def server():
-    host ='192.168.2.2' 
+    host ='192.168.2.7' 
     port =3000
     socketobj = s.socket(s.AF_INET,s.SOCK_STREAM)
     socketobj.bind((host,port))
@@ -12,9 +12,6 @@ def server():
         if not data:
             break 
         print(f"Recieved from client: {data}")
-
-        responce  = input("ENTER A DATA TO send ")
-        c.send(responce.encode())
     c.close()
 if __name__ == '__main__':
     server()
