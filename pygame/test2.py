@@ -4,6 +4,7 @@ import time
 import math
 import random
 #hello
+#hello4567
 RED_CAR = pygame.transform.scale(pygame.image.load("car1.png"), (int(150 * 0.55), int(84 * 0.55)))
 coin_image = pygame.image.load("coin.png")
 coin_image = pygame.transform.scale(coin_image, (50, 30))
