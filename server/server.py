@@ -9,12 +9,7 @@ def server():
     print(f"conntected to :{address}")
     while True:
         data = c.recv(1024).decode()
-        if not data:
-            break 
         print(f"Recieved from client: {data}")
-
-        responce  = input("ENTER A DATA TO send ")
-        c.send(responce.encode())
     c.close()
 if __name__ == '__main__':
     server()

@@ -1,10 +1,17 @@
 from typing import Any
 import pygame
-import time
 import math
 import random
 import client
-
+import socket as s 
+try:
+    host='192.168.2.7'
+    port = 3000
+    client_socket  = s.socket()            #connection to the server 
+    client_socket.connect((host,port))
+    print("connetected to the server")
+except e:
+    print('error ')
 RED_CAR = pygame.transform.scale(pygame.image.load("car1.png"), (int(150 * 0.55), int(84 * 0.55)))
 coin_image = pygame.image.load("coin.png")
 coin_image = pygame.transform.scale(coin_image, (50, 30))
@@ -57,7 +64,8 @@ class AbstractCar:
         # Update the car's position
         self.y -= vertical
         self.x -= horizontal
-        client.client(player_car.x,player_car.y)
+        coords = self.x
+        client_socket.send(coords.encode())
         # Ensure the car stays within the boundaries
         self.x = max(0, min(WIDTH - self.img.get_width(), self.x))
         self.y = max(0, min(HEIGHT - self.img.get_height(), self.y))
