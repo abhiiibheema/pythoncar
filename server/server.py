@@ -1,6 +1,6 @@
 import socket as  s
 def server():
-    host ='192.168.2.2' 
+    host ='192.168.2.7' 
     port =3000
     socketobj = s.socket(s.AF_INET,s.SOCK_STREAM)
     socketobj.bind((host,port))
